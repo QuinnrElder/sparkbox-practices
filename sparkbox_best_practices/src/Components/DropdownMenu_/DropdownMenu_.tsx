@@ -3,9 +3,10 @@ import { DropdownMenuDetailsViewModel } from '../../Types/DropdownMenuDetailsVie
 
 type DropdownMenuProps = {
   dropdownMenuDetails: DropdownMenuDetailsViewModel[]
+  accordianId: string
 }
 
-export const DropdownMenu: FunctionComponent<DropdownMenuProps> = ({dropdownMenuDetails}) => {
+export const DropdownMenu: FunctionComponent<DropdownMenuProps> = ({dropdownMenuDetails, accordianId}) => {
 
   const renderLinks = () => {
     return dropdownMenuDetails.map((detail) => {
@@ -17,7 +18,7 @@ export const DropdownMenu: FunctionComponent<DropdownMenuProps> = ({dropdownMenu
 
   return (
     <Fragment>
-        <dd className="accordion__content" id="accordion-resources" aria-hidden="false">
+        <dd className="accordion__content" id={`accordion-${accordianId}`} aria-hidden="false">
           <ul>
             {renderLinks()}
           </ul>
