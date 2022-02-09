@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import { DropdownBar } from './Components/DropdownBar_/DropdownBar_';
-import { DropdownMenu } from './Components/DropdownMenu_/DropdownMenu_';
+import { AccordianBar } from './Components/AccordianBar_/AccordianBar_';
+import { AccordianMenu } from './Components/AccordianMenu_/AccordianMenu_';
 
 const practiceDetails = {
   accordianOne: {
@@ -89,33 +89,33 @@ const dropdownHandler = () => {
           <section>	
           <h1>Accessible Multi-select FAQ Accordion</h1>
               <dl className="accordion">
-                <DropdownBar
+                <AccordianBar
                     dropdownHandler={dropdownHandler}
                     dropdownButtonName={practiceDetails.accordianOne.accordianBarName}
                     ariaControlType={"resources"}
                 />
-                <DropdownMenu 
+                <AccordianMenu 
                   dropdownMenuDetails={practiceDetails.accordianOne.linkInformation}
                   accordianId={"resources"}
                 />
                 
-                <DropdownBar
+                <AccordianBar
                     dropdownHandler={dropdownHandler}
                     dropdownButtonName={practiceDetails.accordianTwo.accordianBarName}
                     ariaControlType={"markup"}
                 />
-                <DropdownMenu 
+                <AccordianMenu 
                   dropdownMenuDetails={practiceDetails.accordianTwo.linkInformation}
                   accordianId={"markup"}
                 />
                 
                 
-                <DropdownBar
+                <AccordianBar
                     dropdownHandler={dropdownHandler}
                     dropdownButtonName={practiceDetails.accordianThree.accordianBarName}
                     ariaControlType={"behavior"}
                 />
-                <DropdownMenu 
+                <AccordianMenu 
                   dropdownMenuDetails={practiceDetails.accordianThree.linkInformation}
                   accordianId={"behavior"}
                 />

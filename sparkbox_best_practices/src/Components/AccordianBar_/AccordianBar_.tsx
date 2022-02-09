@@ -1,12 +1,12 @@
 import React, { Fragment, FunctionComponent } from 'react';
 
-type DropdownBarProps = {
+type AccordianBarProps = {
   dropdownHandler: () => void;
   dropdownButtonName: string;
   ariaControlType: string
 }
 
-export const DropdownBar: FunctionComponent<DropdownBarProps> = ({dropdownHandler,  dropdownButtonName,  ariaControlType}) => {
+export const AccordianBar: FunctionComponent<AccordianBarProps> = ({dropdownHandler,  dropdownButtonName,  ariaControlType}) => {
 
   return (
     <Fragment>

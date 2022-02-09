@@ -1,12 +1,12 @@
 import React, { Fragment, FunctionComponent } from 'react';
 import { DropdownMenuDetailsViewModel } from '../../Types/DropdownMenuDetailsViewModel';
 
-type DropdownMenuProps = {
+type AccordianMenuProps = {
   dropdownMenuDetails: DropdownMenuDetailsViewModel[]
   accordianId: string
 }
 
-export const DropdownMenu: FunctionComponent<DropdownMenuProps> = ({dropdownMenuDetails, accordianId}) => {
+export const AccordianMenu: FunctionComponent<AccordianMenuProps> = ({dropdownMenuDetails, accordianId}) => {
 
   const renderLinks = () => {
     return dropdownMenuDetails.map((detail) => {
