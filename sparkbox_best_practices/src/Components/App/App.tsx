@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
-import { AccordianBar } from './Components/AccordianBar_/AccordianBar_';
-import { AccordianMenu } from './Components/AccordianMenu_/AccordianMenu_';
+import './App.scss';
+import { AccordianBar } from '../AccordianBar_/AccordianBar_';
+import { AccordianMenu } from '../AccordianMenu_/AccordianMenu_';
 
 const practiceDetails = {
   accordianOne: {
