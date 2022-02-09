@@ -10,10 +10,13 @@ export const DropdownMenu: FunctionComponent<DropdownMenuProps> = ({dropdownMenu
 
   const renderLinks = () => {
     return dropdownMenuDetails.map((detail) => {
+      if(detail.link === "") {
+        return <li>{detail.linkName}</li>
+      } else {
       return (
         <li><a href={detail.link}>{detail.linkName}</a></li>
       )
-    }) 
+    }}) 
   }
 
   return (

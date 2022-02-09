@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { DropdownBar } from './Components/DropdownBar_/DropdownBar_';
 import { DropdownMenu } from './Components/DropdownMenu_/DropdownMenu_';
@@ -108,6 +107,17 @@ const dropdownHandler = () => {
                 <DropdownMenu 
                   dropdownMenuDetails={practiceDetails.accordianTwo.linkInformation}
                   accordianId={"markup"}
+                />
+                
+                
+                <DropdownBar
+                    dropdownHandler={dropdownHandler}
+                    dropdownButtonName={practiceDetails.accordianThree.accordianBarName}
+                    ariaControlType={"behavior"}
+                />
+                <DropdownMenu 
+                  dropdownMenuDetails={practiceDetails.accordianThree.linkInformation}
+                  accordianId={"behavior"}
                 />
               </dl>
           </section>
