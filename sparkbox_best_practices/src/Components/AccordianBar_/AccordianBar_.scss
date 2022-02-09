@@ -1,6 +1,10 @@
 $theme-primary: #7337ef;
 $theme-secondary: #444;
 
+dt {
+margin: .5rem;
+}
+
 .accordion {
 	&__button {
 		background-color: $theme-primary;
