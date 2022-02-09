@@ -1,4 +1,7 @@
 import React, { Fragment, FunctionComponent } from 'react';
+import "./AccordianMenu_.scss"
+
+//TYPES
 import { DropdownMenuDetailsViewModel } from '../../Types/DropdownMenuDetailsViewModel';
 
 type AccordianMenuProps = {

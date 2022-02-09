@@ -1,4 +1,5 @@
 import React, { Fragment, FunctionComponent } from 'react';
+import "./AccordianBar_.scss";
 
 type AccordianBarProps = {
   dropdownHandler: () => void;
