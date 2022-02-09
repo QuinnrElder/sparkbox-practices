@@ -2,14 +2,16 @@ import React, { Fragment, FunctionComponent } from 'react';
 import "./AccordianMenu_.scss"
 
 //TYPES
-import { DropdownMenuDetailsViewModel } from '../../Types/DropdownMenuDetailsViewModel';
+import { AccordionMenuDetailsViewModel } from '../../Types/AccordionMenuDetailsViewModel';
+import { AccordionTypes } from '../../Types/AccordionEnum_';
 
 type AccordianMenuProps = {
-  dropdownMenuDetails: DropdownMenuDetailsViewModel[]
-  accordianId: string
+  dropdownMenuDetails: AccordionMenuDetailsViewModel[];
+  accordianId: AccordionTypes;
+  isExpanded: boolean;
 }
 
-export const AccordianMenu: FunctionComponent<AccordianMenuProps> = ({dropdownMenuDetails, accordianId}) => {
+export const AccordianMenu: FunctionComponent<AccordianMenuProps> = ({dropdownMenuDetails, accordianId, isExpanded}) => {
 
   const renderLinks = () => {
     return dropdownMenuDetails.map((detail) => {
@@ -24,7 +26,7 @@ export const AccordianMenu: FunctionComponent<AccordianMenuProps> = ({dropdownMe
 
   return (
     <Fragment>
-        <dd className="accordion__content" id={`accordion-${accordianId}`} aria-hidden="false">
+        <dd className="accordion__content" id={`accordion-${accordianId}`} aria-hidden={!isExpanded}>
           <ul>
             {renderLinks()}
           </ul>
