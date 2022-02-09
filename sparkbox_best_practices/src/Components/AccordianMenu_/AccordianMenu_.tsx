@@ -16,10 +16,10 @@ export const AccordianMenu: FunctionComponent<AccordianMenuProps> = ({dropdownMe
   const renderLinks = () => {
     return dropdownMenuDetails.map((detail) => {
       if(detail.link === "") {
-        return <li>{detail.linkName}</li>
+        return <li key={detail.linkName}>{detail.linkName}</li>
       } else {
       return (
-        <li><a href={detail.link}>{detail.linkName}</a></li>
+        <li key={detail.linkName} ><a href={detail.link}>{detail.linkName}</a></li>
       )
     }}) 
   }
