@@ -4,6 +4,7 @@ import "./AccordianBar_.scss";
 //TYPES
 import { AccordionTypes } from "../../Types/AccordionEnum_";
 
+//THIS.TYPE
 type AccordianBarProps = {
   accordionHandler: (accordionType: AccordionTypes) => void;
   accordionButtonName: string;
@@ -11,13 +12,14 @@ type AccordianBarProps = {
   isExpanded: boolean;
 };
 
+//THIS.COMPONENT
 export const AccordianBar: FunctionComponent<AccordianBarProps> = ({
   accordionHandler,
   accordionButtonName,
   ariaControlType,
   isExpanded,
 }) => {
-  
+
   return (
     <Fragment>
       <dt>

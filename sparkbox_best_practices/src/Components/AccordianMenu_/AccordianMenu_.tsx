@@ -5,12 +5,14 @@ import "./AccordianMenu_.scss";
 import { AccordionMenuDetailsViewModel } from "../../Types/AccordionMenuDetailsViewModel";
 import { AccordionTypes } from "../../Types/AccordionEnum_";
 
+//THIS.TYPE
 type AccordianMenuProps = {
   dropdownMenuDetails: AccordionMenuDetailsViewModel[];
   accordianId: AccordionTypes;
   isExpanded: boolean;
 };
 
+//THIS.COMPONENT
 export const AccordianMenu: FunctionComponent<AccordianMenuProps> = ({
   dropdownMenuDetails,
   accordianId,
