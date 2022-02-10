@@ -1,21 +1,21 @@
 import React, { Fragment, FunctionComponent } from "react";
-import "./AccordianMenu_.scss";
+import "./AccordionMenu_.scss";
 
 //TYPES
 import { AccordionMenuDetailsViewModel } from "../../Types/AccordionMenuDetailsViewModel";
 import { AccordionTypes } from "../../Types/AccordionEnum_";
 
 //THIS.TYPE
-type AccordianMenuProps = {
+type AccordionMenuProps = {
 	dropdownMenuDetails: AccordionMenuDetailsViewModel[];
-	accordianId: AccordionTypes;
+	accordionId: AccordionTypes;
 	isExpanded: boolean;
 };
 
 //THIS.COMPONENT
-export const AccordianMenu: FunctionComponent<AccordianMenuProps> = ({
+export const AccordionMenu: FunctionComponent<AccordionMenuProps> = ({
 	dropdownMenuDetails,
-	accordianId,
+	accordionId,
 	isExpanded,
 }) => {
 	const renderLinks = () => {
@@ -36,7 +36,7 @@ export const AccordianMenu: FunctionComponent<AccordianMenuProps> = ({
 		<Fragment>
 			<dd
 				className="accordion__content"
-				id={`accordion-${accordianId}`}
+				id={`accordion-${accordionId}`}
 				// The reason for the BANG oporator is we want the value to be opposite
 				// of the  state of the accordion... QRE - Feb 10th, 2022
 				aria-hidden={!isExpanded}

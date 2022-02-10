@@ -1,8 +1,8 @@
 import { AccordionTypes } from "./AccordionEnum_"
 
-export type MockDataDetailsViewModel = AccordianViewModel[]
+export type MockDataDetailsViewModel = AccordionViewModel[]
 
-export type AccordianViewModel = {
+export type AccordionViewModel = {
     accordianBarName: string;
     isOpen?: boolean
     accordionType: AccordionTypes;

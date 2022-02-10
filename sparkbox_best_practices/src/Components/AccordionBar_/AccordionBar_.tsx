@@ -1,11 +1,11 @@
 import React, { Fragment, FunctionComponent } from "react";
-import "./AccordianBar_.scss";
+import "./AccordionBar_.scss";
 
 //TYPES
 import { AccordionTypes } from "../../Types/AccordionEnum_";
 
 //THIS.TYPE
-type AccordianBarProps = {
+type AccordionBarProps = {
 	accordionHandler: (accordionType: AccordionTypes) => void;
 	accordionButtonName: string;
 	ariaControlType: AccordionTypes;
@@ -13,7 +13,7 @@ type AccordianBarProps = {
 };
 
 //THIS.COMPONENT
-export const AccordianBar: FunctionComponent<AccordianBarProps> = ({
+export const AccordionBar: FunctionComponent<AccordionBarProps> = ({
 	accordionHandler,
 	accordionButtonName,
 	ariaControlType,

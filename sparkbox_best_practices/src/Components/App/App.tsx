@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.scss";
 
 //COMPONENTS
-import { AccordianBar } from "../AccordianBar_/AccordianBar_";
-import { AccordianMenu } from "../AccordianMenu_/AccordianMenu_";
+import { Accordion } from "../Accordion_/Accordion_";
 
 //MOCK DATA
 import { PracticeDetails } from "../../MockData/MockData_";
@@ -11,7 +10,7 @@ import { PracticeDetails } from "../../MockData/MockData_";
 //TYPES
 import { AccordionTypes } from "../../Types/AccordionEnum_";
 import {
-	AccordianViewModel,
+	AccordionViewModel,
 	MockDataDetailsViewModel,
 } from "../../Types/MockedData_";
 
@@ -22,7 +21,7 @@ function App() {
 	);
 
 	const accordionHandler = (accordionType: AccordionTypes) => {
-		let newState = mockDataForAccordion.map((accordion: AccordianViewModel) => {
+		let newState = mockDataForAccordion.map((accordion: AccordionViewModel) => {
 			if (accordion.accordionType !== accordionType) return accordion;
 			return {
 				...accordion,
@@ -33,19 +32,12 @@ function App() {
 	};
 
 	const loadInitValuesForAccordion = () => {
-		return mockDataForAccordion.map((value, index) => {
+		return mockDataForAccordion.map((value:AccordionViewModel, index) => {
 			return (
 				<div key={`Index-In-mockDataForAccordion${index}`}>
-					<AccordianBar
+					<Accordion
+						accordionDetails={value}
 						accordionHandler={accordionHandler}
-						accordionButtonName={value.accordianBarName}
-						ariaControlType={value.accordionType}
-						isExpanded={value.isOpen ? value.isOpen : false}
-					/>
-					<AccordianMenu
-						dropdownMenuDetails={value.linkInformation}
-						accordianId={value.accordionType}
-						isExpanded={value.isOpen ? value.isOpen : false}
 					/>
 				</div>
 			);
