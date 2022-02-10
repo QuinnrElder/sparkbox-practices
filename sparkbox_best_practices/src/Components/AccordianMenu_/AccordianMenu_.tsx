@@ -16,6 +16,7 @@ export const AccordianMenu: FunctionComponent<AccordianMenuProps> = ({
   accordianId,
   isExpanded,
 }) => {
+
   const renderLinks = () => {
     return dropdownMenuDetails.map((detail) => {
       if (detail.link === "") {
@@ -35,6 +36,8 @@ export const AccordianMenu: FunctionComponent<AccordianMenuProps> = ({
       <dd
         className="accordion__content"
         id={`accordion-${accordianId}`}
+        // The reason for the BANG oporator is we want the value to be opposite
+        // of the  state of the accordion... QRE - Feb 10th, 2022
         aria-hidden={!isExpanded}
       >
         <ul>{renderLinks()}</ul>
