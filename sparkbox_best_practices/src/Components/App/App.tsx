@@ -48,7 +48,7 @@ function App() {
           <dl className="accordion">
             <AccordianBar
               accordionHandler={accordionHandler}
-              dropdownButtonName={PracticeDetails.resources.accordianBarName}
+              accordionButtonName={PracticeDetails.resources.accordianBarName}
               ariaControlType={AccordionTypes.resources}
               isExpanded={accordionBarsState.resources}
             />
@@ -60,7 +60,7 @@ function App() {
 
             <AccordianBar
               accordionHandler={accordionHandler}
-              dropdownButtonName={PracticeDetails.markup.accordianBarName}
+              accordionButtonName={PracticeDetails.markup.accordianBarName}
               ariaControlType={AccordionTypes.markup}
               isExpanded={accordionBarsState.markup}
             />
@@ -72,7 +72,7 @@ function App() {
 
             <AccordianBar
               accordionHandler={accordionHandler}
-              dropdownButtonName={
+              accordionButtonName={
                 PracticeDetails.behavior.accordianBarName
               }
               ariaControlType={AccordionTypes.behavior}

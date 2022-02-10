@@ -6,14 +6,14 @@ import { AccordionTypes } from "../../Types/AccordionEnum_";
 
 type AccordianBarProps = {
   accordionHandler: (accordionType: AccordionTypes) => void;
-  dropdownButtonName: string;
+  accordionButtonName: string;
   ariaControlType: AccordionTypes;
   isExpanded: boolean;
 };
 
 export const AccordianBar: FunctionComponent<AccordianBarProps> = ({
   accordionHandler,
-  dropdownButtonName,
+  accordionButtonName,
   ariaControlType,
   isExpanded,
 }) => {
@@ -27,7 +27,7 @@ export const AccordianBar: FunctionComponent<AccordianBarProps> = ({
           aria-expanded={isExpanded}
           aria-controls={`accordion-${ariaControlType}`}
         >
-          {dropdownButtonName}
+          {accordionButtonName}
         </button>
       </dt>
     </Fragment>
