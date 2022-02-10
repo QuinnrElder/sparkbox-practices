@@ -76,4 +76,4 @@ export const PracticeDetails = [
       linkName: "Then when focused on the button, VO users can toggle the content with Control + Option + Space",
     }],
   },
- ] as MockDataDetailsViewModel
+] as MockDataDetailsViewModel

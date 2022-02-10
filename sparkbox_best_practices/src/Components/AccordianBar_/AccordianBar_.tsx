@@ -6,32 +6,31 @@ import { AccordionTypes } from "../../Types/AccordionEnum_";
 
 //THIS.TYPE
 type AccordianBarProps = {
-  accordionHandler: (accordionType: AccordionTypes) => void;
-  accordionButtonName: string;
-  ariaControlType: AccordionTypes;
-  isExpanded: boolean;
+	accordionHandler: (accordionType: AccordionTypes) => void;
+	accordionButtonName: string;
+	ariaControlType: AccordionTypes;
+	isExpanded: boolean;
 };
 
 //THIS.COMPONENT
 export const AccordianBar: FunctionComponent<AccordianBarProps> = ({
-  accordionHandler,
-  accordionButtonName,
-  ariaControlType,
-  isExpanded,
+	accordionHandler,
+	accordionButtonName,
+	ariaControlType,
+	isExpanded,
 }) => {
-
-  return (
-    <Fragment>
-      <dt>
-        <button
-          onClick={() => accordionHandler(ariaControlType)}
-          className="accordion__button"
-          aria-expanded={isExpanded}
-          aria-controls={`accordion-${ariaControlType}`}
-        >
-          {accordionButtonName}
-        </button>
-      </dt>
-    </Fragment>
-  );
+	return (
+		<Fragment>
+			<dt>
+				<button
+					onClick={() => accordionHandler(ariaControlType)}
+					className="accordion__button"
+					aria-expanded={isExpanded}
+					aria-controls={`accordion-${ariaControlType}`}
+				>
+					{accordionButtonName}
+				</button>
+			</dt>
+		</Fragment>
+	);
 };
