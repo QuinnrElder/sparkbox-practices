@@ -4,7 +4,7 @@ import { AccordianBar } from "../AccordianBar_/AccordianBar_";
 import { AccordianMenu } from "../AccordianMenu_/AccordianMenu_";
 
 //MOCK DATA
-import { PracticeDetails } from "../../MockData/MockData";
+import { PracticeDetails } from "../../MockData/MockData_";
 
 //TYPES
 import { AccordionBarsStateViewModel } from "../../Types/AccordionBarsStateViewModel";
@@ -48,24 +48,24 @@ function App() {
           <dl className="accordion">
             <AccordianBar
               accordionHandler={accordionHandler}
-              dropdownButtonName={PracticeDetails.accordianOne.accordianBarName}
+              dropdownButtonName={PracticeDetails.resources.accordianBarName}
               ariaControlType={AccordionTypes.resources}
               isExpanded={accordionBarsState.resources}
             />
             <AccordianMenu
-              dropdownMenuDetails={PracticeDetails.accordianOne.linkInformation}
+              dropdownMenuDetails={PracticeDetails.resources.linkInformation}
               accordianId={AccordionTypes.resources}
               isExpanded={accordionBarsState.resources}
             />
 
             <AccordianBar
               accordionHandler={accordionHandler}
-              dropdownButtonName={PracticeDetails.accordianTwo.accordianBarName}
+              dropdownButtonName={PracticeDetails.markup.accordianBarName}
               ariaControlType={AccordionTypes.markup}
               isExpanded={accordionBarsState.markup}
             />
             <AccordianMenu
-              dropdownMenuDetails={PracticeDetails.accordianTwo.linkInformation}
+              dropdownMenuDetails={PracticeDetails.markup.linkInformation}
               accordianId={AccordionTypes.markup}
               isExpanded={accordionBarsState.markup}
             />
@@ -73,14 +73,14 @@ function App() {
             <AccordianBar
               accordionHandler={accordionHandler}
               dropdownButtonName={
-                PracticeDetails.accordianThree.accordianBarName
+                PracticeDetails.behavior.accordianBarName
               }
               ariaControlType={AccordionTypes.behavior}
               isExpanded={accordionBarsState.behavior}
             />
             <AccordianMenu
               dropdownMenuDetails={
-                PracticeDetails.accordianThree.linkInformation
+                PracticeDetails.behavior.linkInformation
               }
               accordianId={AccordionTypes.behavior}
               isExpanded={accordionBarsState.behavior}
