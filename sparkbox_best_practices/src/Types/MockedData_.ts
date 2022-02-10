@@ -1,11 +1,11 @@
-export type MockDataDetailsViewModel = {
-  resources: AccordianViewModel;
-  markup: AccordianViewModel;
-  behavior: AccordianViewModel
-}
+import { AccordionTypes } from "./AccordionEnum_"
+
+export type MockDataDetailsViewModel = AccordianViewModel[]
 
 export type AccordianViewModel = {
     accordianBarName: string;
+    isOpen?: boolean
+    accordionType: AccordionTypes;
     linkInformation: LinkInformationViewModel[]
 }
 

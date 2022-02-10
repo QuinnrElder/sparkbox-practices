@@ -1,7 +1,9 @@
+import { AccordionTypes } from "../Types/AccordionEnum_";
 import { MockDataDetailsViewModel } from "../Types/MockedData_";
 
-export const PracticeDetails = {
-  resources: {
+export const PracticeDetails = [
+  {
+    accordionType: AccordionTypes.resources,
     accordianBarName: "What resources did you use to build this?",
     linkInformation: [{
       link: "https://www.w3.org/TR/wai-aria-practices/#disclosure",
@@ -20,7 +22,8 @@ export const PracticeDetails = {
       linkName: "Disclosure (FAQ) Example",
     }],
   },
-  markup: {
+  {
+    accordionType: AccordionTypes.markup,
     accordianBarName: "What are the HTML tags and ARIA attributes used?",
     linkInformation: [
       {
@@ -53,7 +56,8 @@ export const PracticeDetails = {
       },
     ],
   },
-  behavior: {
+  {
+    accordionType: AccordionTypes.behavior,
     accordianBarName: "What is the expected behavior of this component?",
     linkInformation: [{
       link: "",
@@ -72,4 +76,4 @@ export const PracticeDetails = {
       linkName: "Then when focused on the button, VO users can toggle the content with Control + Option + Space",
     }],
   },
-} as MockDataDetailsViewModel
+ ] as MockDataDetailsViewModel
