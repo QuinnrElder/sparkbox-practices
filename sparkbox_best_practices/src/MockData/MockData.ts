@@ -8,7 +8,7 @@ export const PracticeDetails = {
     {
       link: "https://www.w3.org/TR/wai-aria-practices/#accordion",
       linkName: "Accordion Design Pattern",
-    }, 
+    },
     {
       link: "https://www.w3.org/TR/wai-aria-practices/examples/accordion/accordion.html",
       linkName: "Accordion Example",
@@ -28,7 +28,7 @@ export const PracticeDetails = {
       {
         link: "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button",
         linkName: "button",
-      }, 
+      },
       {
         link: "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl",
         linkName: "dl",
@@ -60,7 +60,7 @@ export const PracticeDetails = {
     {
       link: "",
       linkName: "When using a keyboard and the NVDA screen reader users can hit Enter or Space to toggle the content for the focused accordion button",
-    }, 
+    },
     {
       link: "",
       linkName: "When using the VO screen reader users can navigate to the button with Control + Option + Space",
