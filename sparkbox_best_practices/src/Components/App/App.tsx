@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.scss";
+
+//COMPONENTS
 import { AccordianBar } from "../AccordianBar_/AccordianBar_";
 import { AccordianMenu } from "../AccordianMenu_/AccordianMenu_";
 
@@ -7,38 +9,65 @@ import { AccordianMenu } from "../AccordianMenu_/AccordianMenu_";
 import { PracticeDetails } from "../../MockData/MockData_";
 
 //TYPES
-import { AccordionBarsStateViewModel } from "../../Types/AccordionBarsStateViewModel";
 import { AccordionTypes } from "../../Types/AccordionEnum_";
+import { AccordianViewModel, MockDataDetailsViewModel } from "../../Types/MockedData_";
 
+//THIS.COMPONENT
 function App() {
-  const [accordionBarsState, setAccordionBarsState] = useState({
-    resources: false,
-    markup: false,
-    behavior: false,
-  } as AccordionBarsStateViewModel);
+  const [mockDataForAccordion, setMockDataForAccordion] = useState([]  as MockDataDetailsViewModel)
 
   const accordionHandler = (accordionType: AccordionTypes) => {
-    switch (accordionType) {
-      case AccordionTypes.resources:
-        setAccordionBarsState((prevState) => ({
-          ...prevState,
-          resources: !prevState.resources,
-        }));
-        break;
-      case AccordionTypes.markup:
-        setAccordionBarsState((prevState) => ({
-          ...prevState,
-          markup: !prevState.markup,
-        }));
-        break;
-      case AccordionTypes.behavior:
-        setAccordionBarsState((prevState) => ({
-          ...prevState,
-          behavior: !prevState.behavior,
-        }));
-        break;
-    }
+    let newState = mockDataForAccordion.map((accordion:AccordianViewModel) => {
+      if(accordion.accordionType !== accordionType) return accordion
+      return {
+        ...accordion,
+        isOpen: !accordion.isOpen
+      }
+    })
+    setMockDataForAccordion(newState)
   };
+
+  const loadInitValuesForAccordion = () => {
+    return mockDataForAccordion.map((value, index) => {
+      return (
+        <div key={`Index-In-mockDataForAccordion${index}`}>
+            <AccordianBar
+            accordionHandler={accordionHandler}
+            accordionButtonName={value.accordianBarName}
+            ariaControlType={value.accordionType}
+            isExpanded={value.isOpen ? value.isOpen : false}
+            />
+          <AccordianMenu
+            dropdownMenuDetails={value.linkInformation}
+            accordianId={value.accordionType}
+            isExpanded={value.isOpen ? value.isOpen : false}
+            />
+      </div>
+      )
+    })
+  }
+  
+
+  
+  const initializeMockDataWithAddedValues = (practiceDetails:MockDataDetailsViewModel) => {
+    let updatedData = practiceDetails.map(detail => {
+      return {
+        ...detail,
+        isOpen: false
+      }
+    })
+    setMockDataForAccordion(updatedData)
+  }
+  useEffect(() => {
+    let isRendered: boolean = true
+    if (isRendered) {
+      initializeMockDataWithAddedValues(PracticeDetails)
+      
+    }
+    return () => {
+      isRendered = false
+    }
+  }, [])
 
   return (
     <div className="App">
@@ -46,45 +75,7 @@ function App() {
         <section>
           <h1>Accessible Multi-select FAQ Accordion</h1>
           <dl className="accordion">
-            <AccordianBar
-              accordionHandler={accordionHandler}
-              accordionButtonName={PracticeDetails.resources.accordianBarName}
-              ariaControlType={AccordionTypes.resources}
-              isExpanded={accordionBarsState.resources}
-            />
-            <AccordianMenu
-              dropdownMenuDetails={PracticeDetails.resources.linkInformation}
-              accordianId={AccordionTypes.resources}
-              isExpanded={accordionBarsState.resources}
-            />
-
-            <AccordianBar
-              accordionHandler={accordionHandler}
-              accordionButtonName={PracticeDetails.markup.accordianBarName}
-              ariaControlType={AccordionTypes.markup}
-              isExpanded={accordionBarsState.markup}
-            />
-            <AccordianMenu
-              dropdownMenuDetails={PracticeDetails.markup.linkInformation}
-              accordianId={AccordionTypes.markup}
-              isExpanded={accordionBarsState.markup}
-            />
-
-            <AccordianBar
-              accordionHandler={accordionHandler}
-              accordionButtonName={
-                PracticeDetails.behavior.accordianBarName
-              }
-              ariaControlType={AccordionTypes.behavior}
-              isExpanded={accordionBarsState.behavior}
-            />
-            <AccordianMenu
-              dropdownMenuDetails={
-                PracticeDetails.behavior.linkInformation
-              }
-              accordianId={AccordionTypes.behavior}
-              isExpanded={accordionBarsState.behavior}
-            />
+            {loadInitValuesForAccordion()}
           </dl>
         </section>
       </header>
