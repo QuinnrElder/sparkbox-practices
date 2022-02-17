@@ -1,0 +1,50 @@
+$theme-primary: #7337ef;
+$theme-secondary: #444;
+
+dt {
+margin: .5rem;
+}
+
+.accordion {
+	&__button {
+		background-color: $theme-primary;
+		color: #fff;
+		border-radius: 0.25rem;
+		padding: 0.5rem 1rem;
+		font-size: 1rem;
+		display: block;
+		width: 100%;
+		text-align: left;
+		border: none;
+		font-family: 'Poppins', sans-serif;
+		font-weight: 500;
+		position: relative;
+		transition: all 150ms linear;
+		
+		&::after {
+			content: '';
+			display: inline-block;
+			position: absolute;
+			top: 0.75rem;
+			right: 0.875rem;
+			height: 0.4rem;
+			width: 0.4rem;
+			border-right: 0.25rem solid #fff;
+			border-top: 0.25rem solid #fff;
+			transform: rotate(135deg);
+		}
+		
+		&:hover {
+			background-color: #444;
+			transform: scale(1.025);
+		}
+		
+		&[aria-expanded='true'] {
+			background-color: $theme-secondary;
+		}
+		
+		&[aria-expanded='true']::after {
+			transform: rotate(315deg);
+		}
+	}
+}
