@@ -18,6 +18,7 @@ export const AccordionMenu: FunctionComponent<AccordionMenuProps> = ({
 	accordionId,
 	isExpanded,
 }) => {
+	console.log("quinn");
 	const renderLinks = () => {
 		return dropdownMenuDetails.map((detail) => {
 			if (detail.link === "") {
